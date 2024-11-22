@@ -1,0 +1,36 @@
+{% extends 'aquasite/partials/base.html' %}
+
+{% block title %}AQUA | Contato{% endblock %}
+
+{% block body-content %}
+
+{% load static %}
+
+<div class="contact-container hide" id="contact">
+  <h2 class="title" style="margin-bottom: 2rem;">Entre em Contato</h2>
+  <div class="contact-content">
+    <div class="contact-form-container">
+      
+      <form action="" class="contact-form">
+        <label for="email" class="contact-label" >
+          Email
+          <input type="email" name="email" placeholder="Exemplo: aquamvp@gmail.com" class="email-input">
+        </label> 
+        
+        <label for="desc" class="contact-label">
+          Descrição
+          <textarea type="text" name="desc" rows="4" class="contact-input-desc" placeholder="Nos diga, do que precisa?"></textarea>
+        </label>
+        <button class="button">Enviar</button>
+      </form>
+
+      <div class="side-image-contact">
+        <img src="{% static 'aquasite/images/global_images/logo-claro.png' %}" alt="contact-image">
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
