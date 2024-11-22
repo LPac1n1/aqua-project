@@ -1,53 +1,109 @@
 {% extends 'aquasite/partials/base.html' %}
-
+{% load static %}
 {% block title %}AQUA | Autenticação{% endblock %}
 
 {% block body-content %}
-  <div class="container mt-5">
-    <div class="d-flex justify-content-center gap-4">
-      <div class="card h-100" id="login">
-        <div class="card-body">
-          <form action="{% url 'login' %}" method="post">
-            {% csrf_token %}
-            <div class="d-flex flex-column justify-content-between">
-              <div>
-                <div class="mb-3">
-                  <label for="login-email" class="form-label">Email</label>
-                  <input type="email" class="form-control" name="login-email">
-                </div>
-                <div class="mb-3">
-                  <label for="login-password" class="form-label">Senha</label>
-                  <input type="password" class="form-control" name="login-password">
-                </div>
-              </div>
-              <div>
-                <button type="submit" class="btn btn-primary w-100">Entrar</button>
-              </div>
-            </div>
-          </form>
-        </div>
+
+<head>
+  <link rel="stylesheet" href="{% static 'aquasite/css/login_css/login.css' %}">
+</head>
+
+<body class="login-js claro">
+
+  {% include 'aquasite/partials/home-navbar.html' %}
+
+  <div class="container-fluid" id="prin">
+    <div class="themes">
+      <button class="white-button hide"><i class="fa-regular fa-sun"></i></button>
+      <button class="dark-button"><i class="fa-regular fa-moon"></i></button> 
+    </div>
+
+    <div class="conteudo primeiro-cont">
+      <div class="co1">
+        <img src="{% static 'aquasite/images/global_images/logo-claro.png' %}" class="logo-pags">
+        <h3 class="title">SEJA BEM VINDO</h3>
+        <p class="descricao">Bem vindo ao seu painel de controle AQUA</p>
+        <p class="descricao">Já tem cadastro?  Então faça já o seu login!</p>
+        <button id="b-login-screen" class="botao">Login</button>
       </div>
 
-      <div class="card" id="register">
-        <div class="card-body">
-          <form action="{% url 'verification' %}" method="post">
-            {% csrf_token %}
-            <div class="mb-3">
-              <label for="register-name" class="form-label">Nome</label>
-              <input type="text" class="form-control" name="register-name">
-            </div>
-            <div class="mb-3">
-              <label for="register-email" class="form-label">Email</label>
-              <input type="email" class="form-control" name="register-email">
-            </div>
-            <div class="mb-3">
-              <label for="register-password" class="form-label">Senha</label>
-              <input type="password" class="form-control" name="register-password">
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Registrar</button>
-          </form>
-        </div>
+      <div class="co2">
+        <h3 class="title">CRIANDO CONTA</h3>
+        <p class="descricao">Venha fazer parte dessa maravilhosa comunidade</p>
+        
+        <form class="formo" action="{% url 'verification' %}" method="post">
+          {% csrf_token %}
+          <div class="form-floating mb-3">
+            <input name="register-name" type="text" class="form-control" id="floatingInput" placeholder="Nome">
+            <label for="register-name" style="font-size: 85%;"> <i class="fa-solid fa-user"></i> Nome </label>
+          </div>
+          
+          <div class="form-floating mb-3">
+            <input name="register-email" type="email" class="form-control" id="floatingInput" placeholder="nome@gmail.com">
+            <label for="register-email" style="font-size: 85%;"><i class="fa-solid fa-envelope"></i> Email</label>
+          </div>
+          
+          <div class="form-floating">
+            <input name="register-password" type="password" class="form-control Password" id="floatingPassword" placeholder="Senha">
+            <label for="register-password" style="font-size: 85%;">Senha </label>
+            <div class="hide-base"><button id="hidded"><i class="fa-solid fa-eye-slash"></i></button></div>
+            <div class="hide-base"><button id="show" class="hide"><i class="fa-solid fa-eye"></i></button></div>
+          </div>
+          
+          <button class="botao-pri" type="submit">Cadastrar</button>
+
+          <div class="log-buttons">
+            <button id="googlebutton"><img src="{% static 'aquasite/images/login_images/google.png' %}"></img><h1>Registre-se com Google</h1></button>
+          </div>
+          
+        </form>
+        
       </div>
-    </div>
+    </div><!-- primeiro conteudo -->
+
+
+    <div class="conteudo segundo-cont">
+      <div class="co1">
+        <img src="{% static 'aquasite/images/global_images/logo-claro.png' %}" id="logo-login" class="logo-pags">
+        <h3 class="title">BEM VINDO</h3>
+        <p class="descricao">Bem vindo ao seu painel de controle AQUA</p>
+        <p class="descricao">Ainda não tem uma conta? Crie uma agora!</p>
+        <button id="b-cad-screen" class="botao">Cadastrar</button>
+      </div>
+
+      <div class="co2">
+        <h3 class="title">LOGIN</h3>
+        <p class="descricao">Faça o login na sua conta AQUA!</p>
+        <form class="formo" action="{% url 'login' %}" method="post">
+          {% csrf_token %}
+          <div class="form-floating mb-3">
+            <input name="login-email" type="email" class="form-control" id="floatingInput" placeholder="Nome">
+            <label for="floatingInput" style="font-size: 85%;"> <i class="fa-solid fa-user"></i> Nome </label>
+          </div>
+          <div class="form-floating">
+            <input name="login-password" type="password" class="form-control Password1" id="floatingPassword" placeholder="Senha">
+            <label for="floatingPassword" style="font-size: 85%;"><i class="fa-solid fa-lock "></i> Senha</label>
+            <div class="hide-base"><button id="hidded1"><i class="fa-solid fa-eye-slash"></i></button></div>
+            <div class="hide-base"><button id="show1" class="hide"><i class="fa-solid fa-eye"></i></button></div>
+          </div>
+          <button class="botao-pri" type="submit">Efetuar login</button>
+          <div class="log-buttons">
+            <button><img src="{% static 'aquasite/images/login_images/google.png' %}"></img><h1>Logar com Google</h1></button>
+          </div>
+          <a href="" class="forgot">Esqueceu a senha?</a>
+        </form>
+      </div>
+    </div><!-- segundo conteudo -->
   </div>
+
+  <div class="theme-btn">
+    <button id="dark_btn"><img src="{% static 'aquasite/images/global_icons/moon.png' %}"></button>
+    <button class="hide" id="white_btn"><img src="{% static 'aquasite/images/global_icons/sun.png' %}"></button>
+  </div>
+
+  <script src="{% static 'aquasite/js/login_script.js' %}"></script>
+  <script src="https://kit.fontawesome.com/c0ec05f2fe.js" crossorigin="anonymous"></script>
+  <script src="{% static 'aquasite/js/global_script/global.js' %}"></script>
+</body>
+
 {% endblock %}

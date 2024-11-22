@@ -1,0 +1,121 @@
+* {
+  font-family: Cascadia Code;
+}
+
+/* Inicio */
+.inicio-white {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  background: linear-gradient(to right, var(--primaryWhite), var(--secondaryWhite));
+  box-shadow: 0 10px;
+}
+.inicio-white .side-image {
+  position: absolute;
+  right: 0;
+  top: 20%;
+  width: 40%;
+  animation: float infinite 3s ease-in-out, intro 3s ease;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.inicio-dark {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  animation: intro 0.9s ease-in-out;
+}
+.inicio-dark::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 9;
+  background: linear-gradient(to right, black, transparent);
+}
+.inicio-dark img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 1;
+}
+
+.inicio-content {
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+.inicio-text {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 10;
+  margin-left: 1.5rem;
+}
+
+/* Paramets */
+.paramets {
+  width: 100%;
+  height: 90vh;
+  z-index: 999;
+  margin-top: -4rem;
+}
+.paramets .cards {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  animation: anim 2s ease-in-out;
+  gap: 3rem;
+  z-index: 999;
+}
+.paramets .cards .card {
+  width: 20%;
+  height: 65%;
+  font-size: 1.9vh;
+  z-index: 999;
+  transform: scale(1);
+  transition: transform 0.3s;
+}
+.paramets .cards .card:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s;
+}
+.paramets .cards .card .card-title {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--secondaryWhite);
+}
+.paramets .cards .card .card-body {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+@keyframes anim {
+  from {
+    transform: translateY(3rem);
+    z-index: 999;
+  }
+  to {
+    transform: translateY(0);
+  }
+}/*# sourceMappingURL=home.css.map */

@@ -16,6 +16,11 @@
 			type="text/css"
 		/>
 
+		<!-- Global CSS/JS - Homepage -->
+		<link rel="stylesheet" href="{% static 'aquasite/css/global_css/main.css' %}">
+		<link rel="stylesheet" href="{% static 'aquasite/css/global_css/global_homepage.css' %}">
+		<script src="{% static 'js/global_script/global.js' %}"></script>
+
 		{% block extra-head-content %}{% endblock %}
 
 		<title>{% block title %}{% endblock %}</title>
@@ -34,6 +39,7 @@
 		</style>
 
 		<script src="{% static 'aquasite/js/switch-theme.js' %}" defer></script>
+		<script src="{% static 'aquasite/js/global_script/global.js' %}"></script>
 	</head>
 	<body>
 		{% block body-content %}{% endblock %}

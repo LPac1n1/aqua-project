@@ -1,0 +1,426 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+  font-family: Ubuntu;
+}
+
+body{
+  height: 100vh;
+}
+
+.main-title{
+  color: #eae8e8;
+  margin: 0 0 30px 0;
+  font-size: 50px;
+  text-align: center;
+  position: relative;
+  border-bottom: 2px solid #fff;
+  font-weight: bold;
+}
+
+#prin{
+  display: flex;
+  border: solid 2px black;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.title{
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-top: 10px; 
+}
+
+.conteudo{
+  background: linear-gradient(to bottom, #005E6D, transparent);
+  background-color: #809af1;
+  border-radius: 15px;
+  width: 80%;
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; 
+
+  &::before{
+    content: "";
+    position: absolute;
+    background-color: #005E6D;
+    width: 40%;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    left: 0;
+  }
+}
+
+.descricao{
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: white;
+  text-align: center;
+}
+
+.primeiro-cont{
+  display: flex;
+  gap: 15px;
+}
+
+.primeiro-cont .co2{
+  z-index: 3;
+}
+
+.co1{
+  text-align: center;
+  width: 40%;
+  color: #fff;
+}
+
+.co2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  margin-bottom: 13px;
+  margin-top: 10px;
+}
+
+.formo{
+  display: flex;
+  flex-direction: column;
+
+  button{
+    align-self: center;
+  }
+  
+  input{
+    height: 2rem;
+  }
+}
+
+.botao{
+  color: #fff;
+  border: solid 2px #00bad6;
+  background-color: #005E6D;
+  border-radius: 12px;
+  font-size: 13px;
+  padding: 3px;
+  width: 30%;
+  height: 10%;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-transform: uppercase;
+
+  &:hover{
+    background-color: transparent;
+    transform: scale(0.9);
+  }
+}
+
+.botao-pri{
+  color: #fff;
+  border: solid 2px blue;
+  background-color: blue;
+  border-radius: 12px;
+  font-size: 13px;
+  padding: 3px;
+  width: 100%;
+  margin: 10px 0 0 0;
+  height: 10%;
+  transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+  text-transform: uppercase;
+
+  &:hover{
+    color: black;
+    background-color: transparent;
+    transform: scale(0.9);
+  }
+}
+
+.icons{
+  margin-right: 2%;
+}
+
+.forgot{
+  color: rgb(81, 81, 243);
+  align-self: center;
+}
+
+.segundo-cont{
+  display: flex;
+  position: absolute;
+}
+
+.segundo-cont .co1{
+  order: 2;
+  z-index: -1;
+}
+
+.segundo-cont .co2{
+  order: 1;
+  z-index: -1;
+}
+
+.login-js .primeiro-cont .co1,
+.login-js .primeiro-cont .co2{
+z-index: -1;
+}
+
+.login-js .segundo-cont .co1,
+.login-js .segundo-cont .co2{
+  z-index: 1;
+  animation: coanim 2.8s;
+}
+
+.login-js .conteudo::before{
+  left: 60%;
+  border-radius: 0 15px 15px 0;
+  animation: slidein 0.6s;
+}
+
+.cadastro-js .segundo-cont .co1,
+.cadastro-js .segundo-cont .co2{
+  z-index: -1;
+}
+
+.cadastro-js .primeiro-cont .co1,
+.cadastro-js .primeiro-cont .co2{
+  z-index: 1;
+  animation: coanim 2.8s;
+}
+
+.cadastro-js .conteudo::before{
+  left: 0;
+  border-radius: 15px 0 0 15px;
+  animation: slidein1 0.6s;
+}
+
+/*animation*/
+@keyframes slidein {
+  from{
+    left: 0%;
+    width:100%;
+    z-index: 4;
+  }
+  to{
+    left: 60%;
+    width: 40%;
+  }
+}
+
+@keyframes slidein1 {
+  from{
+    left: 0%;
+    width: 100%;
+    z-index: 4;
+  }
+  to{
+    left: 0%;
+    width: 40%;
+  }
+}
+
+@keyframes coanim{
+  from{
+    opacity: 0%;
+  }
+  to{
+    opacity: 100%;
+  }
+}
+
+@keyframes coanim1{
+  from{
+    opacity: 0%;
+  }
+  to{
+    opacity: 100%;
+  }
+}
+
+/*MOBILE*/
+
+@media screen and (max-width: 1048px){
+
+  .navcolor{
+    position: relative;
+  }
+  
+  .account{
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-left: 15px;
+    margin-top: 25px;
+    width: 4%;
+  }
+
+  .logo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar-toggler{
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 15px;
+    margin-top: 25px;
+  }
+
+  .links{
+    opacity: 90%;
+    font-size: 20px;
+  }
+
+  .links:hover{
+    transform: none;
+    opacity: 100%;
+  }
+  
+  .conteudo{
+    width: 100%;
+    height: 100%;
+  }
+
+  .conteudo::before{
+    width: 100%;
+    height: 40%;
+    top: 0;
+    border-radius: 0;
+  }
+
+  .cadastro-js .conteudo::before{
+    border-radius: 0;
+    animation: none;
+  }
+  .login-js .conteudo::before{
+    border-radius: 0;
+    top: 60%;
+    left: 0;
+    animation: none;
+  }
+
+  .primeiro-cont, .segundo-cont{
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 0;
+  }
+
+
+  .botao, .botao-pri{
+    height: fit-content;
+    width: fit-content;
+    padding: 0 10px 0 10px;
+  }
+}
+
+@media screen and (max-width: 472px){
+  .title{
+    margin-top: 3px;
+    font-size: 20px;
+  }
+
+  .descricao{
+    font-size: 13px;
+  }
+}
+
+.dark-button, .white-button{
+  margin-left: 10px;
+  background-color: transparent;
+  border: none;
+  
+}
+
+.white-button{
+  position: absolute;
+}
+
+.hide{
+  display: none;
+  z-index: -1;
+  visibility: hidden;
+}
+
+.escuro{
+  background: linear-gradient(to bottom, #2666a7, #11385f);
+  animation: coanim 1s;
+}
+
+.escuro .conteudo{
+  background: linear-gradient(to bottom, #005E6D, transparent);
+  background-color: #809af1;
+}
+
+.claro{
+  background: linear-gradient(to bottom, #2c83da, rgba(54, 130, 206, 0.377));
+  animation: coanim1 1s;
+}
+
+.claro .conteudo{
+  background: linear-gradient(to bottom, #028296, transparent);
+  background-color: #9db2f1;
+}
+
+.logo-pags{
+  width: 35%;
+}
+
+.log-buttons{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.log-buttons button{
+  display: flex;
+  justify-content:left;
+  border: none;
+  border-radius: 3px;
+  width: 100%;
+  background-color: #fff;
+  height: 1.8rem;
+  gap: 13px;
+  padding-top: 1.5%;
+  
+}
+
+.log-buttons h1{
+  position:relative;
+  width: 100%;
+  font-size: 13px;
+  align-self: center;
+  font-weight: bold;
+  z-index: 1;
+  padding-top: 5px;
+}
+
+.log-buttons img{
+  position: absolute;
+  height: 1.3rem;
+  margin-left: 12px;
+}
+
+.hide-base{
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.hide-base button{
+  border: none;
+}
+
+.hide-base i{
+  left: 88%;
+  top: 35%;
+  position: absolute;
+  align-self:flex-end;
+}

@@ -1,38 +1,22 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" style="height: 48px;">
+{% load static %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+<nav class="navbar navbar-expand-lg bg-body-tertiary navcolor-white">
 	<div class="container-fluid">
-		<a class="navbar-brand" href="{% url 'home' %}">AQUA</a>
-		<button
-			class="navbar-toggler"
-			type="button"
-			data-bs-toggle="collapse"
-			data-bs-target="#navbarScroll"
-			aria-controls="navbarScroll"
-			aria-expanded="false"
-			aria-label="Toggle navigation"
-		>
+		<div class="logo">
+			<a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'aquasite/images/global_images/logo-claro.png' %}" alt=""></a>
+		</div>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse" id="navbarScroll">
-			<ul
-				class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
-				style="--bs-scroll-height: 100px"
-			>
-				<li class="nav-item">
-					<a class="nav-link active" aria-current="page" href="{% url 'about-us' %}">Sobre nós</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="{% url 'contact' %}">Contato</a>
-				</li>
-			</ul>
-			<div class="d-flex justify-content-center align-items-center gap-4">
-					<div class="btn" name="theme-btn" id="switch-light-theme"><i class="fa-regular fa-lightbulb fa-lg"></i></div>
-					<div class="btn" name="theme-btn" id="switch-dark-theme"><i class="fa-regular fa-moon fa-lg"></i></div>
-
-				<div class="d-flex gap-2">
-					<a href="{% url 'auth' %}"><button class="btn btn-primary" type="submit">Entrar</button></a>
-					<a href="{% url 'auth' %}"><button type="button" class="btn btn-outline-primary">Registrar</button></a>
-				</div>
+		<div class="collapse navbar-collapse nav-all" id="navbarNav">
+			<div class="navbar-nav">
+				<a class="nav-link links" aria-current="page" href="{% url 'home' %}">Inicio</a>
+				<a class="nav-link links" href="{% url 'about-us' %}">SeaWare</a>
+				<a class="nav-link links" href="{% url 'home' %}#contato">Contato</a>
 			</div>
 		</div>
+		<button class="account">
+			<a href="{% url 'auth' %}"><span class="material-symbols-outlined icon">person</span></a>
+		</button>
 	</div>
 </nav>
