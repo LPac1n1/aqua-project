@@ -30,7 +30,7 @@ export let turbidityChartData = {
 export let turbidityChart = new Chart(turbidityChartCanvas, turbidityChartData)
 
 export function updateTurbidityChartData(djangoData) {
-  function convertVoltageToNTU(voltage, voltageMin = 0, voltageMax = 5) {
+  function convertVoltageToNTU(voltage, voltageMin = 0, voltageMax = 7) {
     if (voltage > voltageMax) voltage = voltageMax
     if (voltage < voltageMin) voltage = voltageMin
 
@@ -79,7 +79,7 @@ export function updateLevelChartData(djangoData) {
   function calculateWaterLevelPercentage() {
     let distanceOfWater = Number(Math.round(djangoData.level))
     let aquariumHeight = Number(djangoData.aquariumHeight)
-    let maxDistance = aquariumHeight + 20
+    let maxDistance = aquariumHeight + 214
 
     const waterLevelHTMLPercentage = document.getElementById('water-percentage')
     const waterLevelBackground = document.getElementById('water-background')
@@ -87,8 +87,8 @@ export function updateLevelChartData(djangoData) {
     let waterLevelPercentage = 0
 
     if (waterLevelHTMLPercentage != null && waterLevelBackground != null) {
-      if (distanceOfWater <= maxDistance && distanceOfWater >= 20) 
-        waterLevelPercentage = Math.round(Math.abs((((distanceOfWater - 20) / aquariumHeight) * 100) - 100))
+      if (distanceOfWater <= maxDistance && distanceOfWater >= 14) 
+        waterLevelPercentage = Math.round(Math.abs((((distanceOfWater - 14) / aquariumHeight) * 100) - 100))
     }
 
     if (distanceOfWater > maxDistance) return waterLevelPercentage = 100
