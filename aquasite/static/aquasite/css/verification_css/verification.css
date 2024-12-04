@@ -1,0 +1,60 @@
+* {
+  font-family: Cascadia Code;
+}
+
+.verification-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondaryDark);
+}
+.verification-container .verification-content {
+  width: 80%;
+  height: 80%;
+  background-color: var(--primaryDark);
+  border-radius: 1rem;
+}
+.verification-container .verification-content .verification-image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.verification-container .verification-content .verification-image-container .verification-image {
+  width: 30%;
+  margin-bottom: -5rem;
+  animation: intro 3s;
+}
+@keyframes intro {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.verification-container .verification-content .desc {
+  text-align: center;
+}
+.verification-container .verification-content .form-input-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+.verification-container .verification-content .form-input-container label {
+  text-align: center;
+}
+.verification-container .verification-content .form-input-container input {
+  width: 30%;
+  margin-top: 0.3rem;
+  text-align: center;
+}
+.verification-container .verification-content button {
+  align-self: center;
+  margin-top: 1rem;
+  width: 10rem;
+}/*# sourceMappingURL=verification.css.map */
