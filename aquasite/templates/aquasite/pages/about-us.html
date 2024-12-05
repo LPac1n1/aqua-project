@@ -1,11 +1,63 @@
 {% extends 'aquasite/partials/base.html' %}
 
-{% block title %}AQUA | Sobre nós{% endblock %}
+{% block title %}AQUA | Homepage{% endblock %}
 
 {% block body-content %}
-{% include 'aquasite/partials/home-navbar.html' %}
 
-  <div class="container mt-5">
-    <h1>Sobre nós</h1>
-  </div>
+<head>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'aquasite/css/seaware_css/seaware.css' %}">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+
+<body class="back-white">
+
+	{% include 'aquasite/partials/home-navbar.html' %}
+
+  <div class="about-container">
+		<div class="about-content">
+			<div class="about-text">
+				<h1 class="title">Sobre nós</h1>
+				<p class="desc">A SeaWare é uma empresa dedicada ao monitoramento de parâmetros aquáticos,
+					 com o objetivo de promover a saúde e a sustentabilidade dos ecossistemas aquáticos.</p>
+			</div>
+			<div class="about-image">
+				<img src="{% static 'aquasite/seaware_images/equipe.jpg' %}" alt="">
+			</div>
+		</div>
+	</div>
+
+	<div class="description-container">
+		<div class="description-content">
+			<h1 class="title">Nossos Objetivos</h1>
+			<div class="objectives-container">
+				<div class="objectives-content">
+					
+					<ul>
+						<b class="desc-title">Monitoramento da Qualidade da Água</b>
+						<li class="desc">
+							A SeaWare realiza medições regulares dos parâmetros da água, como pH, turbidez, oxigênio dissolvido e
+							 contaminantes, garantindo que os ecossistemas aquáticos permaneçam saudáveis.
+						</li>
+					</ul>
+
+					<ul>
+						<b class="desc-title" style="text-align: center;">Relatórios e Análises</b>
+						<li class="desc">
+							Os dados coletados são utilizados para gerar relatórios que ajudam na avaliação do estado dos corpos
+							 d'água e na identificação de áreas que necessitam de intervenção.
+						</li>
+					</ul>
+
+					<p class="desc" style="text-align: center;">A SeaWare se compromete a atuar de forma ética e responsável, priorizando a sustentabilidade em todas as suas operações e contribuindo para um futuro mais saudável
+						 para os ecossistemas aquáticos e as comunidades que dependem deles.</p>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>
 {% endblock %}
