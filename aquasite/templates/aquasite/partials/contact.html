@@ -6,31 +6,51 @@
 
 {% load static %}
 
-<div class="contact-container hide" id="contact">
+<div class="contact-container">
   <h2 class="title" style="margin-bottom: 2rem;">Entre em Contato</h2>
   <div class="contact-content">
     <div class="contact-form-container">
       
-      <form action="" class="contact-form">
+      <form id="contactForm" class="contact-form">
+        <label for="name" class="contact-label" >
+          Nome
+          <input type="text" name="name" id="name" placeholder="Informe seu nome" class="email-input" required>
+        </label> 
+
         <label for="email" class="contact-label" >
           Email
-          <input type="email" name="email" placeholder="Exemplo: aquamvp@gmail.com" class="email-input">
+          <input type="email" name="email" id="email" placeholder="Exemplo: aquamvp@gmail.com" class="email-input" required>
         </label> 
         
         <label for="desc" class="contact-label">
           Descrição
-          <textarea type="text" name="desc" rows="4" class="contact-input-desc" placeholder="Nos diga, do que precisa?"></textarea>
+          <textarea type="text" name="message" id="message" rows="4" class="contact-input-desc" placeholder="Nos diga do que precisa" required></textarea>
         </label>
-        <button class="button">Enviar</button>
+
+        <input type="hidden" name="_subject" value="Contato solicitado">
+        <input type="text" name="_honey" style="display:none">
+        <input type="hidden" name="_captcha" value="false">
+
+        <button class="button" id="contact-button" type="submit">Enviar</button>
       </form>
 
       <div class="side-image-contact">
-        <img src="{% static 'aquasite/images/global_images/logo-claro.png' %}" alt="contact-image">
+        <img src="../global_css/global_images/logo-claro.png" alt="contact-image">
       </div>
       
     </div>
   </div>
 </div>
+
+<div class="thanks-container hide">
+  <div class="thanks-content">
+    <img src="../global_css/global_images/logo-claro.png">
+    <span class="load"></span>
+    <p class="desc status"><b>Enviando sua mensagem</b></p>
+  </div>
+</div>
+
+<script src="{% static 'aquasite/js/contact.js'%}"></script>
 
 
 {% endblock %}
