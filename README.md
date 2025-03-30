@@ -1,4 +1,4 @@
-# Projeto AQUA - Sistema de Monitoramento da Qualidade da Água (TCC)
+# Projeto AQUA - Sistema de Monitoramento de Qualidade da Água (TCC)
 
 O **Aqua Project** é um sistema de monitoramento da qualidade da água desenvolvido em **Django**, com integração ao **Firebase**. Ele recebe e processa dados de sensores em um **módulo ESP32** para exibição em um **dashboard interativo** em tempo real.
 
